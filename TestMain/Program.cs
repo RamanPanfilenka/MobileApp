@@ -10,7 +10,7 @@ namespace TestMain
         static void Main(string[] args)
         {
             var service = new GoogleSheetFilmService();
-            var films = service.GetFilmsName();
+            var films = service.GetFilms();
             var saveFilmsType = typeof(SavedFilm);
             var prop = saveFilmsType.GetProperties();
             Console.WriteLine("Hello World!");
