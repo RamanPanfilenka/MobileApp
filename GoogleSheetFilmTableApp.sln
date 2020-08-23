@@ -3,7 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.29418.71
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GoogleTable", "GoogleTable\GoogleTable.csproj", "{8C62EE6D-0BB5-4B4E-8509-8C8BBB3615C8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "GoogleTable", "GoogleTable\GoogleTable.csproj", "{8C62EE6D-0BB5-4B4E-8509-8C8BBB3615C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieDb", "MovieDb\MovieDb.csproj", "{FB2F1F94-717A-4610-A5D9-4296208A516E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestMain", "TestMain\TestMain.csproj", "{D0861D1D-FB6D-47FE-A017-95E2DD232CFE}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +19,14 @@ Global
 		{8C62EE6D-0BB5-4B4E-8509-8C8BBB3615C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8C62EE6D-0BB5-4B4E-8509-8C8BBB3615C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8C62EE6D-0BB5-4B4E-8509-8C8BBB3615C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FB2F1F94-717A-4610-A5D9-4296208A516E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FB2F1F94-717A-4610-A5D9-4296208A516E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FB2F1F94-717A-4610-A5D9-4296208A516E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FB2F1F94-717A-4610-A5D9-4296208A516E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0861D1D-FB6D-47FE-A017-95E2DD232CFE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0861D1D-FB6D-47FE-A017-95E2DD232CFE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0861D1D-FB6D-47FE-A017-95E2DD232CFE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0861D1D-FB6D-47FE-A017-95E2DD232CFE}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
