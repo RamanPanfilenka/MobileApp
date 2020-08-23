@@ -44,11 +44,18 @@ namespace GoogleTable
             return response.Values.FirstOrDefault()?.FirstOrDefault()?.ToString() ?? string.Empty;
         }
 
-        public async Task<IEnumerable<string>> GetValues(string range)
+        public async Task<IEnumerable<string>> GetStringValues(string range)
         {
             var response = await SendGetRequest(range);
 
             return response.Values.Where(x => x.Count != 0).Select(x => x.FirstOrDefault()?.ToString());
+        }
+
+        public async Task<IEnumerable<IList<object>>> GetValues(string range)
+        {
+            var response = await SendGetRequest(range);
+
+            return response.Values.Where(x => !string.IsNullOrEmpty(x.FirstOrDefault()?.ToString()));
         }
 
         private async Task<ValueRange> SendGetRequest(string range) {

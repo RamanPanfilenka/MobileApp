@@ -1,4 +1,6 @@
-﻿using MovieDb;
+﻿using BusinessLogic.Models;
+using GoogleTable;
+using MovieDb;
 using System;
 
 namespace TestMain
@@ -7,8 +9,10 @@ namespace TestMain
     {
         static void Main(string[] args)
         {
-            var service = new MovieDbService();
-            var films = service.GetFilmList("Shrek");
+            var service = new GoogleSheetFilmService();
+            var films = service.GetFilmsName();
+            var saveFilmsType = typeof(SavedFilm);
+            var prop = saveFilmsType.GetProperties();
             Console.WriteLine("Hello World!");
             Console.ReadLine();
         }

@@ -1,10 +1,14 @@
-﻿using System;
+﻿using BusinessLogic;
+using BusinessLogic.Models;
+using BusinessLogic.Services;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace GoogleTable
 {
-    public class GoogleSheetFilmService : GoogleSheetService
+    public class GoogleSheetFilmService : GoogleSheetService, IMovieDbService
     {
         private const string _filmNameColumn = "A";
         private const int _listStartRow = 2;
@@ -13,11 +17,13 @@ namespace GoogleTable
         public GoogleSheetFilmService(): base(){
         }
 
-        public async Task<IEnumerable<string>> GetFilms()
+        public async Task<IEnumerable<SavedFilm>> GetFilms()
         {
-            var range = $"{_filmNameColumn}{_listStartRow}:{_filmNameColumn}";
+            var range = $"{_filmNameColumn}{_listStartRow}:H";
 
-            return await GetValues(range);
+            var values = await GetValues(range);
+            var savedFilms = values.ToList().Select(x => MapHelper.Map<SavedFilm>(x));
+            return savedFilms;
         }
 
         public async Task AddFilm(string filmName)

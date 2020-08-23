@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace MovieDb
+namespace BusinessLogic.Models
 {
     public class Film
     {

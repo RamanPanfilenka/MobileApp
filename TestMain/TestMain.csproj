@@ -6,6 +6,8 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BusinessLogic\BusinessLogic.csproj" />
+    <ProjectReference Include="..\GoogleTable\GoogleTable.csproj" />
     <ProjectReference Include="..\MovieDb\MovieDb.csproj" />
   </ItemGroup>
 
