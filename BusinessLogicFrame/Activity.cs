@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BusinessLogic
 {
-    public class Activity
+    public class Activity : IActivity
     {
         private IMovieDbService _movieDbService;
         private IMovieDbSeachService _movieDbSeachService;

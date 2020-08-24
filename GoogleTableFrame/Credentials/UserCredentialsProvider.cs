@@ -25,6 +25,7 @@ namespace GoogleTable
         private static UserCredential LoadCrendentials() {
             UserCredential userCredential;
             string[] scopes = { SheetsService.Scope.Spreadsheets };
+            var dir = Directory.GetCurrentDirectory();
             using (var stream = new FileStream("credentials.json", FileMode.Open, FileAccess.Read))
             {
                 string credPath = "token.json";

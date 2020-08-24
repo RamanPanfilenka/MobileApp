@@ -5,4 +5,10 @@
     <TargetFramework>netcoreapp3.0</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\BusinessLogicFrame\BusinessLogic.csproj" />
+    <ProjectReference Include="..\GoogleTableFrame\GoogleTable.csproj" />
+    <ProjectReference Include="..\MovieDbFrame\MovieDb.csproj" />
+  </ItemGroup>
+
 </Project>

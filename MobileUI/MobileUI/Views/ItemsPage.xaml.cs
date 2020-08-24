@@ -11,6 +11,8 @@ using MobileUI.Models;
 using MobileUI.Views;
 using MobileUI.ViewModels;
 using BusinessLogic;
+using MovieDb;
+using GoogleTable;
 
 namespace MobileUI.Views
 {
@@ -20,13 +22,14 @@ namespace MobileUI.Views
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel viewModel;
-        IActivity Activity = new Activity(new MovieDbServic(), );
+        IActivity _activity = new Activity(new GoogleSheetFilmService(), new MovieDbService());
 
         public ItemsPage()
         {
             InitializeComponent();
 
-            BindingContext = viewModel = new ItemsViewModel();
+            //BindingContext = viewModel = new ItemsViewModel();
+            LoadFilms();
         }
 
         async void OnItemSelected(object sender, SelectedItemChangedEventArgs args)
@@ -54,8 +57,42 @@ namespace MobileUI.Views
                 viewModel.LoadItemsCommand.Execute(null);
         }
 
-        private async void LoadFilms() { 
-            
+        private async void LoadFilms() {
+            var films = await _activity.GetSavedFilms();
+            var listView = new ListView()
+            {
+                HasUnevenRows = true,
+                ItemsSource = films,
+                ItemTemplate = new DataTemplate(GetFilmDataTemplate)
+            };
+            this.Content = listView;
+        }
+
+        private ScrollView GetFilmDataTemplate() {
+            var title = CreateLabel("Title");
+            var genre = CreateLabel("Genre");
+            var runTime = CreateLabel("RunTime");
+            var peopleRating = CreateLabel("PeopleRating");
+            var yegorRating = CreateLabel("YegorRating");
+            var romaRating = CreateLabel("RomaRating");
+
+            var stackLayout = new StackLayout() {
+                Padding = new Thickness(0, 5),
+                Orientation = StackOrientation.Vertical,
+                Children = { title, genre, runTime, peopleRating, yegorRating, romaRating }
+            };
+            var scrollLayout = new ScrollView() {
+                Content = stackLayout,
+            };
+
+            return scrollLayout;
+        }
+
+        private Label CreateLabel(string bindingProperty) {
+            var label = new Label { FontSize = 18 };
+            label.SetBinding(Label.TextProperty, bindingProperty);
+
+            return label;
         }
     }
 }
