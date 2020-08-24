@@ -8,8 +8,8 @@ namespace BusinessLogic.Services
 {
     public interface IMovieDbService
     {
-        public Task<IEnumerable<SavedFilm>> GetFilms();
+        Task<IEnumerable<SavedFilm>> GetFilms();
 
-        public Task AddFilm(string filmName);
+        Task AddFilm(string filmName);
     }
 }

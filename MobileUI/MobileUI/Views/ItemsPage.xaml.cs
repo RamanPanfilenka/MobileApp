@@ -10,6 +10,7 @@ using Xamarin.Forms.Xaml;
 using MobileUI.Models;
 using MobileUI.Views;
 using MobileUI.ViewModels;
+using BusinessLogic;
 
 namespace MobileUI.Views
 {
@@ -19,6 +20,7 @@ namespace MobileUI.Views
     public partial class ItemsPage : ContentPage
     {
         ItemsViewModel viewModel;
+        IActivity Activity = new Activity(new MovieDbServic(), );
 
         public ItemsPage()
         {
@@ -50,6 +52,10 @@ namespace MobileUI.Views
 
             if (viewModel.Items.Count == 0)
                 viewModel.LoadItemsCommand.Execute(null);
+        }
+
+        private async void LoadFilms() { 
+            
         }
     }
 }

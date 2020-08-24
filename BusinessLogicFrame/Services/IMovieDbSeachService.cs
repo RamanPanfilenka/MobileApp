@@ -6,8 +6,8 @@ namespace BusinessLogic.Services
 {
     public interface IMovieDbSeachService
     {
-        public Task<Film> GetFilm(string id);
+        Task<Film> GetFilm(string id);
 
-        public Task<IEnumerable<Film>> GetFilmList(string filmName);
+        Task<IEnumerable<Film>> GetFilmList(string filmName);
     }
 }
